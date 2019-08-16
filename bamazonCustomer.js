@@ -3,6 +3,7 @@ var inquirer = require("inquirer");
 
 var connection = mysql.createConnection({
     host     : "localhost",
+    port: 3306,
     user     : "root",
     password : "root",
     database : "bamazon"
@@ -14,7 +15,7 @@ connection.connect(function(err){
 });
 
 function items() {
-    connection.query("SELECT * FROM ",function(err, res) {
+    connection.query("SELECT * FROM products",function(err, res) {
         if (err) throw err;
         for (var i = 0; i < res.length; i++ ) {
             console.log("Item ID: " + res[i].item_id + "\n", "Product: " + res[i].product_name + "\n", "Price: " + res[i].price + "\n");
@@ -26,9 +27,9 @@ function items() {
                      name: "choice",
                      type: "rawlist",
                      choices: function() {
-                        var choiceArray = [];
+                        var itemList = [];
                         for (var i = 0; i < res.length; i++) {
-                            choiceArray.push(res[i].item_id);
+                            itemList.push(res[i].item_id);
                         }
                         return itemList;
                      },
@@ -46,13 +47,18 @@ function items() {
                 for (var i = 0; i < res.length; i++) {
                     if (res[i].item_id == answer.choice) {
                         pickedItem = res[i];
-                        return pickedItem;
+                        // return pickedItem;
+                        console.log(pickedItem);
                     }
                 }
 
-                if (pickedItem.stock_quantity < parseInt(answer.productUnits)) {
+                if (pickedItem.stock_quantity > answer.productUnits) {
+                    console.log("here you go")
+                    // items();
+                } 
+                
+                else if (pickedItem.stock_quantity < answer.productUnits) {
                     console.log("Insufficient Quantity!");
-                    items();
                 }
                 
             })
