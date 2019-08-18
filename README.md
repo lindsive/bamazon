@@ -24,7 +24,7 @@ __Step One:__ When the user calls "node bamazonCustomer.js", a table of Bamazon'
 
 __Step 2:__ Once the user enters which product they wish to purchase, they are then prompted to put the amount of units of the product they wish to buy. If this amount is greater than what the store has in stock, the message "Insufficient Quantity" is logged to the console.
 
-![Image of the prompt "How many units of this product do you wish to purchase?" is logged to the terminal, along with message "Insufficient Quantity"](assets/images/stepTwoBamazonCustomer.png?raw=true)
+![Image of the prompt "How many units of this product do you wish to purchase?" is logged to the terminal, along with message "Insufficient Quantity"](assets/images/optionTwoBamazonCustomer.png?raw=true)
 
 
 
