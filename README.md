@@ -4,6 +4,6 @@ Bamazon is an Amazon-like storefront, and uses MySQL, JavaScript, and Node.js to
 
 When the user calls "node bamazonCustomer.js", a table of Bamazon's products displays the item_id, product_name, department_name, price, and stock_quantity of the shops items.
 
-![A table of Bamazon products with a question asking the user which item they would like to purchase. Underneath, the products instock are displayed](http://assets/images/stepOneBamazonCustomer.png?raw=true)
+![A table of Bamazon products with a question asking the user which item they would like to purchase. Underneath, the products instock are displayed](assets/images/stepOneBamazonCustomer.png?raw=true)
 
 
