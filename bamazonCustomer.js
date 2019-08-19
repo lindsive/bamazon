@@ -69,6 +69,8 @@ function items() {
                                 console.log("Purchase successful!")
                                 console.log("There are now " + updateStock + " " + answer.pick + "s in stock");
 
+                                process.exit(0);
+
                                 connection.query(
                                     "UPDATE products SET ? WHERE ?", [{
                                             stock_quantity: updateStock
@@ -84,6 +86,7 @@ function items() {
 
                             } else if (stock <= amountPurchased && !NaN) {
                                 console.log("Insufficient Quantity")
+                                process.exit(0);
                             } else {
                                 connection.end()
                             }
